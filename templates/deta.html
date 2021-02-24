@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if request.session.IS_LOGIN %}
+    id：{{ user.userid }}<br>
+    用 户 名：{{ user.username }}<a href="{% url 'changename' %}">修改用户名</a><br>
+    密    码：{{ user.password }}<a href="{% url 'changepass' %}">修改密码</a><br>
+    个人简介：{{ user.info }}<a href="{% url 'changeinfo' %}">修改简介</a><br>
+    <a href="{% url 'logout' %}">登出</a>
+{% endif %}
+</body>
+</html>
